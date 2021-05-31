@@ -46,7 +46,15 @@ q1 <- qstat(0.003279, 0.0001, 0.004018, 0.00113)
 q1
 ```
 
-which yields a Z score of `r (q1[1] - 0.75) / q1[2]` or a p-value of `r pnorm((q1[1] - 0.75), sd=q1[2])`
+which yields a Z score of deviating from 0.75 of
+```{r}
+Z <- (q1[1] - 0.75) / q1[2]
+Z
+```
+or a p-value of
+```{r}
+2*pnorm(-abs(Z))
+```
 
 For the numbers in @Keinan2009-ej, we have for example for the population pair "West African" vs. "North European", $F_\text{ST}^\text{auto} =  0.144 \pm 0.003$ and $F_\text{ST}^\text{X} = 0.221 \pm 0.009$, which yields a Q statistic of
 
@@ -55,7 +63,17 @@ q2 <- qstat(0.144, 0.003, 0.221, 0.009)
 q2
 ```
 
-which gives a Z-score of deviating from 0.75 of `r (q2[1] - 0.75) / q2[2]` and p-value of `r pnorm((q2[1] - 0.75), sd=q2[2])`, which isn't quite what's reported in @Keinan2009-ej (they report $p=3.0\times 10^{-8}$), but not too far off.
+which gives a Z-score of deviating from 0.75 of
+```{r}
+Z <- (q2[1] - 0.75) / q2[2]
+Z
+```
+and p-value of
+```{r}
+2 * pnorm(-abs(Z))
+```
+
+which isn't quite what's reported in @Keinan2009-ej (they report $p=3.0\times 10^{-8}$), but certainly still significant.
 
 
 

@@ -278,7 +278,29 @@ q1</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>which yields a Z score of 0.2826731 or a p-value of 0.6112863</p>
+<p>which yields a Z score of deviating from 0.75 of</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWiA8LSAocTFbMV0gLSAwLjc1KSAvIHExWzJdXG5aXG5gYGAifQ== -->
+<pre class="r"><code>Z &lt;- (q1[1] - 0.75) / q1[2]
+Z</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuMjgyNjczMVxuIn0= -->
+<pre><code>[1] 0.2826731</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>or a p-value of</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMipwbm9ybSgtYWJzKFopKVxuYGBgIn0= -->
+<pre class="r"><code>2*pnorm(-abs(Z))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuNzc3NDI3NFxuIn0= -->
+<pre><code>[1] 0.7774274</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <p>For the numbers in <span class="citation">Keinan et al. (2009)</span>, we have for example for the population pair “West African” vs. “North European,” <span class="math inline">\(F_\text{ST}^\text{auto} = 0.144 \pm 0.003\)</span> and <span class="math inline">\(F_\text{ST}^\text{X} = 0.221 \pm 0.009\)</span>, which yields a Q statistic of</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -291,7 +313,30 @@ q2</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>which gives a Z-score of deviating from 0.75 of -4.7542353 and p-value of 9.9599454^{-7}, which isn’t quite what’s reported in <span class="citation">Keinan et al. (2009)</span> (they report <span class="math inline">\(p=3.0\times 10^{-8}\)</span>), but not too far off.</p>
+<p>which gives a Z-score of deviating from 0.75 of</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWiA8LSAocTJbMV0gLSAwLjc1KSAvIHEyWzJdXG5aXG5gYGAifQ== -->
+<pre class="r"><code>Z &lt;- (q2[1] - 0.75) / q2[2]
+Z</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIC00Ljc1NDIzNVxuIn0= -->
+<pre><code>[1] -4.754235</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>and p-value of</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMiAqIHBub3JtKC1hYnMoWikpXG5gYGAifQ== -->
+<pre class="r"><code>2 * pnorm(-abs(Z))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEuOTkxOTg5ZS0wNlxuIn0= -->
+<pre><code>[1] 1.991989e-06</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>which isn’t quite what’s reported in <span class="citation">Keinan et al. (2009)</span> (they report <span class="math inline">\(p=3.0\times 10^{-8}\)</span>), but certainly still significant.</p>
 <div id="references" class="section level1">
 <h1>References</h1>
 <!-- rnb-text-end -->
@@ -302,7 +347,7 @@ Keinan, Alon, James C Mullikin, Nick Patterson, and David Reich. 2009. <span>“
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUSBTdGF0aXN0aWNzIEVycm9yIFByb3BhZ2F0aW9uIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKYmlibGlvZ3JhcGh5OiBiaWJsaW9ncmFwaHkuYmliCi0tLQoKV2UgY29uc2lkZXIgdGhlIGZvcm11bGFyIGZvciB0aGUgUS1zdGF0aXN0aWMgYXMgZGVmaW5lZCBpbiBAS2VpbmFuMjAwOS1lai4KClxiZWdpbntlcXVhdGlvbn0KICAgIFEgPSBcZnJhY3tcbG9nKDEgLSAyRShGX1x0ZXh0e1NUfV5cdGV4dHthdXRvfSkpfXtcbG9nKDEgLSAyRShGX1x0ZXh0e1NUfV5cdGV4dHtYfSkpfQpcZW5ke2VxdWF0aW9ufQoKR2l2ZW4gZXJyb3JzICRcRGVsdGEgRl9cdGV4dHtTVH1eXHRleHR7YXV0b30kIGFuZCAkXERlbHRhIEZfXHRleHR7U1R9Xlx0ZXh0e1h9JCB3ZSB3YW50IHRvIGNhbGN1bGF0ZSAkXERlbHRhIFEkLCBzbyB3ZSBoYXZlCgpcYmVnaW57ZXF1YXRpb259CiAgICBcRGVsdGEgUSA9IFxzcXJ0e1xsZWZ0KAogICAgXGxlZnQoXERlbHRhIEZfXHRleHR7U1R9Xlx0ZXh0e2F1dG99IFxmcmFje1xwYXJ0aWFsIFF9e1xwYXJ0aWFsIEZfXHRleHR7U1R9Xlx0ZXh0e2F1dG99fVxyaWdodCleMiArCiAgICBcbGVmdChcRGVsdGEgRl9cdGV4dHtTVH1eXHRleHR7WH0gXGZyYWN7XHBhcnRpYWwgUX17XHBhcnRpYWwgRl9cdGV4dHtTVH1eXHRleHR7WH19XHJpZ2h0KV4yCiAgICBccmlnaHQpfQpcZW5ke2VxdWF0aW9ufQoKd2l0aApcYmVnaW57ZXF1YXRpb259CiAgICBcZnJhY3tccGFydGlhbCBRfXtccGFydGlhbCBGX1x0ZXh0e1NUfV5cdGV4dHthdXRvfX0gPSAKICAgIC1cZnJhY3syfXsoMSAtIDJFKEZfXHRleHR7U1R9Xlx0ZXh0e2F1dG99KSl9CiAgICBcZnJhY3sxfXtcbG9nKDEgLSAyRShGX1x0ZXh0e1NUfV5cdGV4dHtYfSkpfQpcZW5ke2VxdWF0aW9ufQoKYW5kClxiZWdpbntlcXVhdGlvbn0KICAgIFxmcmFje1xwYXJ0aWFsIFF9e1xwYXJ0aWFsIEZfXHRleHR7U1R9Xlx0ZXh0e1h9fSA9IAogICAgXGZyYWN7Mn17KDEgLSAyRShGX1x0ZXh0e1NUfV5cdGV4dHtYfSkpfQogICAgXGZyYWN7XGxvZygxIC0gMkUoRl9cdGV4dHtTVH1eXHRleHR7YXV0b30pKX17KFxsb2coMSAtIDJFKEZfXHRleHR7U1R9Xlx0ZXh0e1h9KSkpXjJ9ClxlbmR7ZXF1YXRpb259CgpJbiBvdXIgY2FzZSB3ZSBoYXZlICRGX1x0ZXh0e1NUfV5cdGV4dHthdXRvfSA9IDAuMDAzMjc5IFxwbSAwLjAwMDEkIGFuZCAkRl9cdGV4dHtTVH1eXHRleHR7WH0gPSAwLjAwNDAxOCBccG0gMC4wMDExMyQsIHdoaWNoIHlpZWxkcwpgYGB7cn0KcXN0YXQgPC0gZnVuY3Rpb24oZnN0X2F1dG8sIGZzdF9hdXRvX2VyciwgZnN0X3gsIGZzdF94X2VycikgewogIHEgPC0gbG9nKDEgLSAyICogZnN0X2F1dG8pIC8gbG9nKDEgLSAyICogZnN0X3gpCiAgZGVyaXZfYXV0byA8LSAtIDIuMCAvICgxIC0gMiAqIGZzdF9hdXRvKSAqIDEgLyBsb2coMSAtIDIgKiBmc3RfeCkKICBkZXJpdl94IDwtIDIuMCAvICgxIC0gMiAqIGZzdF94KSAqIGxvZygxIC0gMiAqIGZzdF9hdXRvKSAvIChsb2coMSAtIDIgKiBmc3RfeCkgXiAyKQogIHFlcnIgPC0gc3FydCgoZnN0X2F1dG9fZXJyICogZGVyaXZfYXV0bykgXiAyICsgKGZzdF94X2VyciAqIGRlcml2X3gpIF4gMikKICByZXR1cm4oYyhxLCBxZXJyKSkKfQpxMSA8LSBxc3RhdCgwLjAwMzI3OSwgMC4wMDAxLCAwLjAwNDAxOCwgMC4wMDExMykKcTEKYGBgCgp3aGljaCB5aWVsZHMgYSBaIHNjb3JlIG9mIGByIChxMVsxXSAtIDAuNzUpIC8gcTFbMl1gIG9yIGEgcC12YWx1ZSBvZiBgciBwbm9ybSgocTFbMV0gLSAwLjc1KSwgc2Q9cTFbMl0pYAoKRm9yIHRoZSBudW1iZXJzIGluIEBLZWluYW4yMDA5LWVqLCB3ZSBoYXZlIGZvciBleGFtcGxlIGZvciB0aGUgcG9wdWxhdGlvbiBwYWlyICJXZXN0IEFmcmljYW4iIHZzLiAiTm9ydGggRXVyb3BlYW4iLCAkRl9cdGV4dHtTVH1eXHRleHR7YXV0b30gPSAgMC4xNDQgXHBtIDAuMDAzJCBhbmQgJEZfXHRleHR7U1R9Xlx0ZXh0e1h9ID0gMC4yMjEgXHBtIDAuMDA5JCwgd2hpY2ggeWllbGRzIGEgUSBzdGF0aXN0aWMgb2YKCmBgYHtSfQpxMiA8LSBxc3RhdCgwLjE0NCwgMC4wMDMsIDAuMjIxLCAwLjAwOSkKcTIKYGBgCgp3aGljaCBnaXZlcyBhIFotc2NvcmUgb2YgZGV2aWF0aW5nIGZyb20gMC43NSBvZiBgciAocTJbMV0gLSAwLjc1KSAvIHEyWzJdYCBhbmQgcC12YWx1ZSBvZiBgciBwbm9ybSgocTJbMV0gLSAwLjc1KSwgc2Q9cTJbMl0pYCwgd2hpY2ggaXNuJ3QgcXVpdGUgd2hhdCdzIHJlcG9ydGVkIGluIEBLZWluYW4yMDA5LWVqICh0aGV5IHJlcG9ydCAkcD0zLjBcdGltZXMgMTBeey04fSQpLCBidXQgbm90IHRvbyBmYXIgb2ZmLgoKCgojIFJlZmVyZW5jZXMKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUSBTdGF0aXN0aWNzIEVycm9yIFByb3BhZ2F0aW9uIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKYmlibGlvZ3JhcGh5OiBiaWJsaW9ncmFwaHkuYmliCi0tLQoKV2UgY29uc2lkZXIgdGhlIGZvcm11bGFyIGZvciB0aGUgUS1zdGF0aXN0aWMgYXMgZGVmaW5lZCBpbiBAS2VpbmFuMjAwOS1lai4KClxiZWdpbntlcXVhdGlvbn0KICAgIFEgPSBcZnJhY3tcbG9nKDEgLSAyRShGX1x0ZXh0e1NUfV5cdGV4dHthdXRvfSkpfXtcbG9nKDEgLSAyRShGX1x0ZXh0e1NUfV5cdGV4dHtYfSkpfQpcZW5ke2VxdWF0aW9ufQoKR2l2ZW4gZXJyb3JzICRcRGVsdGEgRl9cdGV4dHtTVH1eXHRleHR7YXV0b30kIGFuZCAkXERlbHRhIEZfXHRleHR7U1R9Xlx0ZXh0e1h9JCB3ZSB3YW50IHRvIGNhbGN1bGF0ZSAkXERlbHRhIFEkLCBzbyB3ZSBoYXZlCgpcYmVnaW57ZXF1YXRpb259CiAgICBcRGVsdGEgUSA9IFxzcXJ0e1xsZWZ0KAogICAgXGxlZnQoXERlbHRhIEZfXHRleHR7U1R9Xlx0ZXh0e2F1dG99IFxmcmFje1xwYXJ0aWFsIFF9e1xwYXJ0aWFsIEZfXHRleHR7U1R9Xlx0ZXh0e2F1dG99fVxyaWdodCleMiArCiAgICBcbGVmdChcRGVsdGEgRl9cdGV4dHtTVH1eXHRleHR7WH0gXGZyYWN7XHBhcnRpYWwgUX17XHBhcnRpYWwgRl9cdGV4dHtTVH1eXHRleHR7WH19XHJpZ2h0KV4yCiAgICBccmlnaHQpfQpcZW5ke2VxdWF0aW9ufQoKd2l0aApcYmVnaW57ZXF1YXRpb259CiAgICBcZnJhY3tccGFydGlhbCBRfXtccGFydGlhbCBGX1x0ZXh0e1NUfV5cdGV4dHthdXRvfX0gPSAKICAgIC1cZnJhY3syfXsoMSAtIDJFKEZfXHRleHR7U1R9Xlx0ZXh0e2F1dG99KSl9CiAgICBcZnJhY3sxfXtcbG9nKDEgLSAyRShGX1x0ZXh0e1NUfV5cdGV4dHtYfSkpfQpcZW5ke2VxdWF0aW9ufQoKYW5kClxiZWdpbntlcXVhdGlvbn0KICAgIFxmcmFje1xwYXJ0aWFsIFF9e1xwYXJ0aWFsIEZfXHRleHR7U1R9Xlx0ZXh0e1h9fSA9IAogICAgXGZyYWN7Mn17KDEgLSAyRShGX1x0ZXh0e1NUfV5cdGV4dHtYfSkpfQogICAgXGZyYWN7XGxvZygxIC0gMkUoRl9cdGV4dHtTVH1eXHRleHR7YXV0b30pKX17KFxsb2coMSAtIDJFKEZfXHRleHR7U1R9Xlx0ZXh0e1h9KSkpXjJ9ClxlbmR7ZXF1YXRpb259CgpJbiBvdXIgY2FzZSB3ZSBoYXZlICRGX1x0ZXh0e1NUfV5cdGV4dHthdXRvfSA9IDAuMDAzMjc5IFxwbSAwLjAwMDEkIGFuZCAkRl9cdGV4dHtTVH1eXHRleHR7WH0gPSAwLjAwNDAxOCBccG0gMC4wMDExMyQsIHdoaWNoIHlpZWxkcwpgYGB7cn0KcXN0YXQgPC0gZnVuY3Rpb24oZnN0X2F1dG8sIGZzdF9hdXRvX2VyciwgZnN0X3gsIGZzdF94X2VycikgewogIHEgPC0gbG9nKDEgLSAyICogZnN0X2F1dG8pIC8gbG9nKDEgLSAyICogZnN0X3gpCiAgZGVyaXZfYXV0byA8LSAtIDIuMCAvICgxIC0gMiAqIGZzdF9hdXRvKSAqIDEgLyBsb2coMSAtIDIgKiBmc3RfeCkKICBkZXJpdl94IDwtIDIuMCAvICgxIC0gMiAqIGZzdF94KSAqIGxvZygxIC0gMiAqIGZzdF9hdXRvKSAvIChsb2coMSAtIDIgKiBmc3RfeCkgXiAyKQogIHFlcnIgPC0gc3FydCgoZnN0X2F1dG9fZXJyICogZGVyaXZfYXV0bykgXiAyICsgKGZzdF94X2VyciAqIGRlcml2X3gpIF4gMikKICByZXR1cm4oYyhxLCBxZXJyKSkKfQpxMSA8LSBxc3RhdCgwLjAwMzI3OSwgMC4wMDAxLCAwLjAwNDAxOCwgMC4wMDExMykKcTEKYGBgCgp3aGljaCB5aWVsZHMgYSBaIHNjb3JlIG9mIGRldmlhdGluZyBmcm9tIDAuNzUgb2YKYGBge3J9ClogPC0gKHExWzFdIC0gMC43NSkgLyBxMVsyXQpaCmBgYApvciBhIHAtdmFsdWUgb2YKYGBge3J9CjIqcG5vcm0oLWFicyhaKSkKYGBgCgpGb3IgdGhlIG51bWJlcnMgaW4gQEtlaW5hbjIwMDktZWosIHdlIGhhdmUgZm9yIGV4YW1wbGUgZm9yIHRoZSBwb3B1bGF0aW9uIHBhaXIgIldlc3QgQWZyaWNhbiIgdnMuICJOb3J0aCBFdXJvcGVhbiIsICRGX1x0ZXh0e1NUfV5cdGV4dHthdXRvfSA9ICAwLjE0NCBccG0gMC4wMDMkIGFuZCAkRl9cdGV4dHtTVH1eXHRleHR7WH0gPSAwLjIyMSBccG0gMC4wMDkkLCB3aGljaCB5aWVsZHMgYSBRIHN0YXRpc3RpYyBvZgoKYGBge1J9CnEyIDwtIHFzdGF0KDAuMTQ0LCAwLjAwMywgMC4yMjEsIDAuMDA5KQpxMgpgYGAKCndoaWNoIGdpdmVzIGEgWi1zY29yZSBvZiBkZXZpYXRpbmcgZnJvbSAwLjc1IG9mCmBgYHtyfQpaIDwtIChxMlsxXSAtIDAuNzUpIC8gcTJbMl0KWgpgYGAKYW5kIHAtdmFsdWUgb2YKYGBge3J9CjIgKiBwbm9ybSgtYWJzKFopKQpgYGAKCndoaWNoIGlzbid0IHF1aXRlIHdoYXQncyByZXBvcnRlZCBpbiBAS2VpbmFuMjAwOS1laiAodGhleSByZXBvcnQgJHA9My4wXHRpbWVzIDEwXnstOH0kKSwgYnV0IGNlcnRhaW5seSBzdGlsbCBzaWduaWZpY2FudC4KCgoKIyBSZWZlcmVuY2VzCgo=</div>
 
 
 
